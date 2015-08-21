@@ -1,0 +1,14 @@
+django<=1.9
+path.py
+django-annoying
+django-extensions
+django-crispy-forms
+MySQL-python
+supervisor
+gunicorn
+whitenoise
+requests
+pytz
+bpython
+celery
+django-celery

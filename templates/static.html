@@ -1,0 +1,48 @@
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Weatherscape XT Web</title>
+        <meta name="description" content="Web System for Weatherscape XT">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="apple-touch-icon" href="{% static 'img/apple-touch-icon.png' %}">
+        <!-- Place favicon.ico in the root directory -->
+
+        <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-sortable/bootstrap-sortable.css' %}">
+        <link rel="stylesheet" href="{% static 'build/main.min.css' %}">
+        {% block css %}{% endblock %}
+        <script src="{% static 'js/modernizr.js' %}"></script>
+    </head>
+    <body class="wxwhite wxdark3-bg">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        {% if messages %}
+        <ul class="messages list-unstyled">
+            {% for message in messages %}
+            <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                {{ message }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% block body %}{% endblock %}
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/moment.min.js' %}"></script>
+        <script src="{% static 'js/underscore-min.js' %}"></script>
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'bootstrap-sortable/bootstrap-sortable.js' %}"></script>
+
+        <script src="{% static 'js/main.js' %}"></script>
+
+        {% block js %}{% endblock %}
+    </body>
+</html>
