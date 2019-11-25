@@ -1,4 +1,4 @@
-django<=1.9
+django
 path.py
 django-annoying
 django-extensions
